@@ -16,3 +16,29 @@ jobs:
         uses: xu-cheng/latex-action@v3
         with:
           root_file: main.tex 
+
+      - name: Checkout website repo
+        uses: actions/checkout@v4
+        with:
+          repository: xinze-zheng/xinze-zheng.github.io
+          path: site
+          token: ${{ secrets.SITE_REPO_TOKEN }}
+
+      - name: Copy CV to website repo
+        run: |
+          mkdir -p site/files
+          cp main.pdf site/files/wxz_cv.pdf
+
+      - name: Commit and push if changed
+        working-directory: site
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          if git status --porcelain | grep 'files/wxz_cv.pdf'; then
+            git add files/wxz_cv.pdf
+            git commit -m "chore: update CV PDF"
+            git push
+          else
+            echo "No changes to CV; skipping commit."
+          fi
