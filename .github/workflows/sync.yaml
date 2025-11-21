@@ -27,7 +27,7 @@ jobs:
       - name: Copy CV to website repo
         run: |
           mkdir -p site/files
-          cp main.pdf site/files/wxz_cv.pdf
+          cp main.pdf site/files/wxz-cv.pdf
 
       - name: Commit and push if changed
         working-directory: site
@@ -35,8 +35,8 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-          if git status --porcelain | grep 'files/wxz_cv.pdf'; then
-            git add files/wxz_cv.pdf
+          if git status --porcelain | grep 'files/wxz-cv.pdf'; then
+            git add files/wxz-cv.pdf
             git commit -m "chore: update CV PDF"
             git push
           else
