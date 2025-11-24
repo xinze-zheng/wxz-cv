@@ -22,10 +22,11 @@
         \end{twocolentry}
 
         \begin{onecolentry}
-            \textit{Real-time vision langugage model streaming}
+            \textit{Real-time vision language model streaming}
             \begin{highlights}
-                \item Profiled and measured proprietary and open-sourced real-time VLM.
+                \item Profiled and measured proprietary and open-sourced real-time vision language models.
                 \item Co-optimizing real-time communication gateway and inference backends.
+                \item Improving real-time user experience with long visual context support using video RAG.
             \end{highlights}
         \end{onecolentry}
 
@@ -52,7 +53,9 @@
             \textit{Satellite based CDN }\ref{pub:starcdn}
             \begin{highlights}
                 \item Proposed StarCDN, a novel LEO satellite-based CDN architecture that achieves low latency and high bandwidth usage via consistent hashing and orbit-aware relayed fetch.
+                \item Achieved 15\% hit rate improvement against baseline LRU design.
                 \item Independently developed and open-sourced, in collaboration with Akamai, a CDN synthetic trace generator for geographically diverse traffic with theoretically proven cache-level and object-level properties.
+                \item Trace generator achieved sub 2\% difference in caching characteristics.
             \end{highlights}
         \end{onecolentry}
 
@@ -67,13 +70,14 @@
         \begin{onecolentry}
             \textit{Cloud Management System Interaction }\ref{pub:watcher}
             \begin{highlights}
-                \item Analyzed and understood the challenges in K8s operator's interaction with users, cloud management platform, and managed systems. 
-                \item Helped build a small tool to identify bugs that cause failure between the operator and the managed system.
+                \item Studied 13 open-sourced K8s operators, and 412 reported failures to identify challenges in cloud operator reliability.
+                \item Helped build a small tool to identify 86 new bugs that cause failure between the operator and the managed system.
             \end{highlights}
             \textit{Cloud and Emulator Discrepancies} \ref{pub:cloudtest}
             \begin{highlights}
-                \item Reasoned fundamental challenges in building reliable cloud service emulators via studying real-world cloud-based applications and fuzzing emulator APIs.
-                \item Contributed to a testing proxy middleware that automatically detects discrepancies between cloud and emulator APIs and selectively runs application tests on cloud and emulator to achieve high-fidelity testing while minimizing the cost of testing.
+                \item Reasoned fundamental challenges in building reliable cloud service emulators via studying 10 real-world cloud-based applications and fuzzing 255 Azure and AWS APIs.
+                \item Identified discrepancies in 37\% of cloud storage APIs and dissected the root causes and manifestations into 8 findings.
+                \item Contributed to a testing proxy middleware that automatically detects discrepancies between cloud and emulator APIs, which carries out CI workflows with high fidelity while minimizing costs.
                 
             \end{highlights}
         \end{onecolentry}
